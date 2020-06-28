@@ -1,0 +1,7 @@
+n = int(input())   
+arr = list(map(int, input().split()))
+newarr = list(dict.fromkeys(arr))
+maxi = max(newarr)
+newarr.remove(maxi)
+maxi2 = max(newarr)
+print(maxi2)
