@@ -15,17 +15,20 @@ import sys
 
 def closestNumbers(arr):
     # Write your code here
+    #first we are sorting the array
     arr.sort()
+    #set the minimum difference to a very large number
     mindiff = 10**10
     res = []
     for i in range(1, len(arr)):
         diff = arr[i] - arr[i-1]
-        
+        #checking if any of the difference is less than the minimum so we can assign the minimum to that value
         if diff < mindiff:
             res = [(arr[i-1], arr[i])]
             mindiff = diff
         elif diff == mindiff:
             res.append((arr[i-1], arr[i]))
+    #the res array contains arrays in it so we need to flat the list
     flat_list = []
     for i in res:
         for j in i:
